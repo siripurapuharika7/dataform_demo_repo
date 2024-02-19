@@ -1,0 +1,13 @@
+config {
+    type: "table",
+    name: "scr_tbl"
+}
+
+SELECT
+  1 AS colname
+UNION ALL
+SELECT
+  2 AS colname
+UNION ALL
+SELECT
+  3 AS colname
