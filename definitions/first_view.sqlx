@@ -10,8 +10,4 @@ UNION ALL
 SELECT
   2 AS colname
 UNION ALL
-SELECT
-  3 AS colname
-UNION ALL
-SELECT
-  4 AS colname
+select 5 as colname
