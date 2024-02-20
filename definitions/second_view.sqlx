@@ -1,6 +1,10 @@
-config { type: "view" }
+config {
+    type: "table",
+    name: "target_tbl",
+    description: "target_tbl"
+}
 
--- Use the ref() function to manage dependencies.
--- Learn more about ref() and other built in functions here: https://cloud.google.com/dataform/docs/dataform-core
-
-SELECT test from ${ref("first_view")}
+SELECT
+  SUM(colname) AS total
+FROM
+  ${ref('src_tbl')}

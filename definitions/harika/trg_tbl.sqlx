@@ -7,3 +7,4 @@ SELECT
   SUM(colname) AS total
 FROM
   ${ref('scr_tbl')}
+
