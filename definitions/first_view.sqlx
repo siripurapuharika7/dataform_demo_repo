@@ -12,3 +12,6 @@ SELECT
 UNION ALL
 SELECT
   3 AS colname
+UNION ALL
+SELECT
+  4 AS colname
