@@ -11,3 +11,5 @@ SELECT
   2 AS colname
 UNION ALL
 select 5 as colname
+union ALL
+select 10 as colname
