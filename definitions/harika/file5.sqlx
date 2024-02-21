@@ -1,0 +1,16 @@
+config {
+    type: "table",
+    schema: "newdataset",
+    name: "cvwithpart",
+    bigquery: {
+        partitionBy: "Date",
+        requirePartitionFilter:true
+    }
+}
+
+SELECT
+  *
+FROM
+  `bigquery-public-data.covid19_nyt.us_counties`
+
+
