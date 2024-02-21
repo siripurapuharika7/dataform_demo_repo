@@ -1,0 +1,10 @@
+config {
+    type: "incremental",
+    schema: "newdataset",
+    name: "inctbl1"
+}
+
+select age,title,phone,timestamp1 from `secure-potion-409606.newdataset.marks1tbl`
+${when(incremental(), `where timestamp1 > (select max(timestamp1) from ${self()})`)}
+
+
