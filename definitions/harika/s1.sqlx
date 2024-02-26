@@ -1,0 +1,7 @@
+config {
+    type:'table',
+    schema:'newdataset',
+    name:'newtable'
+}
+
+select * from `secure-potion-409606.newdataset.inctbl1`

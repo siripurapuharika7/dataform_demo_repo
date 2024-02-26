@@ -1,0 +1,8 @@
+config {
+    type:'table',
+    schema:'newdataset',
+    dependencies:['newtable','newtable1'],
+    name:'jointbl'
+}
+
+select * from ${ref('newtable')} as t1 inner join ${ref('newtable1')} as t2 on t1.age=t2.id

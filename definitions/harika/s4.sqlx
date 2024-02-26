@@ -1,0 +1,12 @@
+config {
+    type:'table',
+    schema:'newdataset',
+    dependencies:['jointbl'],
+    name:'aggtbl'
+}
+
+with cte as (
+    select age,title,newcol,sum(phone) over(partition by title) as sum1 from ${ref('jointbl')}
+)
+
+select * from cte
