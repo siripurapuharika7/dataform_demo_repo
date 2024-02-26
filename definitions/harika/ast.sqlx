@@ -7,6 +7,6 @@ config {
     }
 }
 
-select * from `secure-potion-409606.harika_dataset.marks1` where age is not null
+select * from `secure-potion-409606.harika_dataset.marks1` 
 
 

@@ -1,0 +1,8 @@
+js {  
+    const is_nullable= "YES";
+    const example= "secure-potion-409606.harika_dataset.tasktable1";
+    
+}
+SELECT * from ${example} where is_nullable='${is_nullable}';
+
+

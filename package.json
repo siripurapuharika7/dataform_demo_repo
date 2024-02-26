@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "Data_form_repo_h",
-=======
-  "name": "dataform_demo",
->>>>>>> refs/heads/demo
   "dependencies": {
     "@dataform/core": "2.8.3"
   }

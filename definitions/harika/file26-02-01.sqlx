@@ -1,0 +1,17 @@
+js {
+    const foo = 1;
+    const foo1=2;
+
+    function bar(number) {
+        return number + 1;
+    }
+}
+
+  
+SELECT
+  ${foo} AS one,
+  ${foo1} as two,
+  ${bar(foo)} AS two,
+  ${bar(foo1)} AS three
+
+  

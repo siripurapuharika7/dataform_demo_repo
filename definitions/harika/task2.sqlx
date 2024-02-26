@@ -34,7 +34,8 @@ CREATE OR REPLACE VIEW
   END
     AS data_type1
   FROM
-    harika_dataset.tasktable1 ); FOR tblrow IN (
+    harika_dataset.tasktable1 ); 
+FOR tblrow IN (
   SELECT
     DISTINCT table_name
   FROM
