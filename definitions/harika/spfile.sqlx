@@ -1,0 +1,14 @@
+config {
+    type:"table",
+    name:"asttbl_unique",
+    schema:'newdataset',
+    assertions: {
+        uniqueKey:['age']
+    }
+}
+
+with cte as (
+select age,title,phone,row_number() over(partition by age) as rn from `secure-potion-409606.harika_dataset.marks1` 
+)
+
+select age,title,phone from cte where rn=1

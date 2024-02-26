@@ -1,0 +1,28 @@
+config {
+    type: 'operations',
+    name: 'test1'
+}
+
+CREATE OR REPLACE PROCEDURE
+  `secure-potion-409606.newdataset.task1proc`()
+BEGIN
+DECLARE
+  sql_query string;
+SET
+  sql_query=
+  (
+SELECT
+  STRING_AGG( CONCAT("t1.", column_name, " <> t2.", column_name), " OR ")
+FROM (
+  SELECT
+    column_name
+  FROM
+    `secure-potion-409606.harika_dataset.INFORMATION_SCHEMA.COLUMNS`
+  WHERE
+    table_name = 'info1' ) AS cols);
+EXECUTE IMMEDIATE
+  CONCAT('create or replace table `secure-potion-409606.newdataset.proctbl1` as ', 'SELECT t1.id FROM `secure-potion-409606.harika_dataset.info1` t1 ', 
+  'JOIN `secure-potion-409606.harika_dataset.info2` t2 ON t1.id = t2.id ', 'WHERE ', sql_query);
+END;
+
+call `secure-potion-409606.newdataset.task1proc`();

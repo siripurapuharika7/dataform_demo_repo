@@ -1,0 +1,75 @@
+config {
+    type: 'operations',
+    name: 'test_1'
+}
+
+CREATE OR REPLACE PROCEDURE
+  `secure-potion-409606.harika_dataset.newprocdataform`()
+BEGIN
+DECLARE
+  tblvalue STRING;
+DECLARE
+  sqlvalue string;
+CREATE OR REPLACE VIEW
+  harika_dataset.taskview AS (
+  SELECT
+    column_name,
+    data_type,
+    table_name,
+    is_nullable,
+    CASE
+      WHEN data_type IN ('int', 'bigint', 'smallint', 'tinyint') THEN 'INT64'
+      WHEN data_type IN ('decimal',
+      'numeric') THEN 'NUMERIC'
+      WHEN data_type IN ('float', 'real') THEN 'FLOAT64'
+      WHEN data_type IN ('varchar',
+      'nvarchar',
+      'char',
+      'nchar',
+      'text',
+      'ntext') THEN 'STRING'
+      WHEN data_type = 'date' THEN 'DATE'
+      WHEN data_type = 'time' THEN 'TIME'
+      WHEN data_type = 'datetime' THEN 'TIMESTAMP'
+  END
+    AS data_type1
+  FROM
+    harika_dataset.tasktable1 ); FOR tblrow IN (
+  SELECT
+    DISTINCT table_name
+  FROM
+    harika_dataset.taskview) DO FOR row1 IN (
+  SELECT
+    table_name,
+    column_name,
+    data_type1,
+    is_nullable
+  FROM
+    harika_dataset.taskview
+  WHERE
+    table_name=tblrow.table_name) DO
+IF
+  row1.is_nullable = 'NO' THEN
+SET
+  tblvalue= CONCAT(COALESCE(tblvalue,''),row1.column_name,' ',row1.data_type1,' ','NOT NULL',',');
+  ELSE
+SET
+  tblvalue= CONCAT(COALESCE(tblvalue,''),row1.column_name,' ',row1.data_type1,',');
+END IF
+  ;
+END
+  FOR;
+SET
+  sqlvalue= CONCAT('create or replace table  secure-potion-409606.harika_dataset.',tblrow.table_name, '(',tblvalue,');');
+EXECUTE IMMEDIATE
+  sqlvalue;
+SET
+  tblvalue='';
+SET
+  sqlvalue='';
+END
+  FOR;
+END
+  ;
+CALL
+  `secure-potion-409606.harika_dataset.taskproc`();

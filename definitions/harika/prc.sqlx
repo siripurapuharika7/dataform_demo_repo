@@ -1,0 +1,19 @@
+config {
+    type: 'assertion'
+}
+
+SELECT
+  t1.id
+FROM
+  `secure-potion-409606.NanduSingireddy.info_1` AS t1
+INNER JOIN
+  `secure-potion-409606.NanduSingireddy.info_2` AS t2
+ON
+  t1.id=t2.id
+WHERE
+  t1.name<>t2.name
+  OR t1.age<>t2.age
+  OR t1.city <> t2.city
+  OR t1.country <> t2.country
+  OR t1.department<>t2.department
+  OR t1.salary <> t2.salary 

@@ -1,0 +1,7 @@
+config {
+    type: "table",
+    schema: "newdataset",
+    name: "gptbl"
+}
+
+select * from `secure-potion-409606.harika_dataset.marks1`

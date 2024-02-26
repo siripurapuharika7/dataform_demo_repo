@@ -1,0 +1,19 @@
+config {
+    type: "table",
+    schema: "newdataset",
+    name: "pretbl"
+}
+
+
+SELECT
+  *
+FROM
+  `secure-potion-409606.harika_dataset.marks1`
+
+pre_operations {
+INSERT INTO
+  `secure-potion-409606.harika_dataset.marks1`
+VALUES
+  (100,'abcd',987);
+}
+

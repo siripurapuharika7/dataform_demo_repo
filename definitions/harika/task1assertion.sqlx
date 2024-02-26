@@ -1,0 +1,5 @@
+config {
+    type:'assertion'
+}
+
+select id from `secure-potion-409606.newdataset.proctbl1`

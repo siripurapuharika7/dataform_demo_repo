@@ -5,6 +5,4 @@ config {
 }
 
 select age,title,phone,timestamp1 from `secure-potion-409606.newdataset.marks1tbl`
-${`where timestamp1 > (select max(timestamp1) from ${self()})`}
-
-
+${when (incremental(),`where timestamp1 > (select max(timestamp1) from ${self()})`)}

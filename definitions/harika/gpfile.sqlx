@@ -1,0 +1,37 @@
+config {
+    type: "operations",
+    name: "sptbl"
+}
+
+CREATE OR REPLACE PROCEDURE
+  `newdataset.newproc`()
+BEGIN
+CREATE OR REPLACE TABLE
+  `newdataset.sptbl`( state_name string,
+    confirmcases int,
+    death int
+);
+
+INSERT INTO
+  newdataset.sptbl (
+    state_name,
+    confirmcases,
+    death
+)
+SELECT
+  state_name,
+  COUNT(confirmed_cases) AS confirmcases,
+  COUNT(deaths) AS death
+FROM
+  `bigquery-public-data.covid19_nyt.us_states`
+where  state_name like 'A%'
+GROUP BY
+  state_name;
+
+
+select * from `newdataset.sptbl`;
+
+END;
+
+CALL
+  `newdataset.newproc`();

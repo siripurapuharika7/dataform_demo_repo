@@ -1,0 +1,28 @@
+config {
+    type: "table",
+    schema: 'newdataset',
+    name: 'funtbl1'
+
+}
+
+--   CREATE OR REPLACE FUNCTION
+--     `secure-potion-409606.harika_dataset.func1`(marks float64)
+--     RETURNS string AS
+--   (
+--     CASE
+--       WHEN marks>70 THEN 'P'
+--       WHEN marks>85 THEN 'P1'
+--     ELSE
+--     'other'
+--   END
+--   );
+
+
+  
+SELECT
+  id,
+  name,
+  ${practice.newfun1("marks")} as newcol,
+  date
+FROM
+  `secure-potion-409606.harika_dataset.details_tbl`
