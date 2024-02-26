@@ -1,4 +1,3 @@
-
 // const { bigquery } = require("@dataform/api");
 
 // async function getTableNames() {
