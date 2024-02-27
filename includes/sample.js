@@ -5,7 +5,7 @@
 //   const query = `
 //     SELECT table_name
 //     FROM your_project_id.your_dataset.INFORMATION_SCHEMA.TABLES
-//     WHERE table_schema = 'your_schema'
+//     WHERE table_schema = 'harika_dataset'
 //   `;
 //   const result = await bigquery.query(query);
 //   result.forEach(row => {
@@ -13,5 +13,7 @@
 //   });
 //   return tableNames;
 // }
+
+
  
 // module.exports = getTableNames();

@@ -1,7 +1,8 @@
 config {
     type:'table',
     schema:'newdataset',
-    name:'newtable1'
+    name:'newtable1',
+    tags:['workflow']
 }
 
 select * from `secure-potion-409606.newdataset.funtbl`

@@ -2,7 +2,8 @@ config {
     type:'table',
     schema:'newdataset',
     dependencies:['jointbl'],
-    name:'aggtbl'
+    name:'aggtbl',
+    tags:['workflow']
 }
 
 with cte as (
@@ -10,3 +11,4 @@ with cte as (
 )
 
 select * from cte
+

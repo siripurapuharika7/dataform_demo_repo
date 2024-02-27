@@ -1,10 +1,11 @@
 config {
+    database: 'secure-potion-409606',
     type: "table",
-    name: "trg_tbl"
+    schema: "harika_dataset",
+    name: "uniquetbl"
 }
 
 SELECT
-  SUM(colname) AS total
+  *
 FROM
-  ${ref('scr_tbl')}
-
+  `secure-potion-409606.harika_dataset.info_1`

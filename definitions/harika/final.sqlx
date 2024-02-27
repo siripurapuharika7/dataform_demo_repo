@@ -1,0 +1,6 @@
+-- config {
+--     type: "table",
+--     name:"originaltbl"
+-- }
+
+-- select * from ${ref("uniquetbl")}

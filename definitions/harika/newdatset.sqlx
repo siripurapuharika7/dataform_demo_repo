@@ -1,0 +1,8 @@
+config {
+    database: 'secure-potion-409606',
+    type: "table",
+    schema:"newdataset",
+    name:"uniquetbl"
+}
+
+select * from `secure-potion-409606.harika_dataset.tasktable1`
