@@ -1,0 +1,28 @@
+config {
+    type: 'table',
+    database:'secure-potion-409606',
+    schema:'harika_dataset',
+    name: 'orgtbl',
+    tags:['newone']
+
+}
+
+BEGIN
+
+declare tblvalue string;
+declare sqlquery string;
+
+set tblvalue = "insert into ${ref("outputtbl")}";
+
+
+set sqlquery=
+"select t1.id,t1.age,t1.country,t1.city from ${ref("info_1")} t1 inner join ${ref("info2")} t2 on t1.id=t2.id";
+
+
+EXECUTE IMMEDIATE concat(tblvalue,sqlquery);
+END
+
+
+
+
+

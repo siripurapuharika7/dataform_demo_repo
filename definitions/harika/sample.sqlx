@@ -1,0 +1,8 @@
+config {
+    type:'declaration',
+    database:'secure-potion-409606',
+    schema:'harika_dataset',
+    name:'info_1'
+}
+
+
