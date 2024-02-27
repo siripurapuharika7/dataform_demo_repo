@@ -16,12 +16,8 @@ declare sqlquery string;
 set sqlquery=
 "select t1.id,t1.age,t1.country,t1.city from ${ref("info_1")} t1 inner join ${ref("info2")} t2 on t1.id=t2.id";
 
-set tblvalue = concat("insert into ${ref("outputtbl")}",sqlquery);
+set tblvalue = concat("insert into ${ref("outputtbl")} ",sqlquery);
 
 EXECUTE IMMEDIATE tblvalue;
+
 END
-
-
-
-
-
