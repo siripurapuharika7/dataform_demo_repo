@@ -1,9 +1,9 @@
 config {
-    type: 'operations',
+    type: 'table',
     name: 'test1'
 }
 
-CREATE OR REPLACE PROCEDURE `secure-potion-409606.newdataset.task1proc`()
+-- CREATE OR REPLACE PROCEDURE `secure-potion-409606.newdataset.task1proc`()
 BEGIN
 DECLARE sql_query STRING;
 
@@ -24,12 +24,12 @@ SET sql_query = (
 );
 
 
-EXECUTE IMMEDIATE CONCAT(
-    'CREATE OR REPLACE TABLE `secure-potion-409606.harika_dataset.originaltbl` AS ',
-    'SELECT t1.id FROM `secure-potion-409606.harika_dataset.info_1` t1 ',
-    'JOIN `secure-potion-409606.harika_dataset.info2` t2 ON t1.id = t2.id ',
-    'WHERE ', sql_query
-);
-END;
+-- EXECUTE IMMEDIATE CONCAT(
+--     'CREATE OR REPLACE TABLE `secure-potion-409606.harika_dataset.originaltbl` AS ',
+--     'SELECT t1.id FROM `secure-potion-409606.harika_dataset.info_1` t1 ',
+--     'JOIN `secure-potion-409606.harika_dataset.info2` t2 ON t1.id = t2.id ',
+--     'WHERE ', sql_query
+-- );
+END
 
-call `secure-potion-409606.newdataset.task1proc`()
+-- call `secure-potion-409606.newdataset.task1proc`()
