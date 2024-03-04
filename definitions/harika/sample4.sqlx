@@ -2,6 +2,9 @@ config {
     type: 'table',
     database:'secure-potion-409606',
     schema:'harika_dataset',
-    name: 'outputtbl'
+    name: 'outputtbl',
+    dependencies:['assertion1']
 }
 
+
+select * from ${ref("orgtbl")} where country='USA'

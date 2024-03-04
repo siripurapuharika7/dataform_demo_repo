@@ -3,28 +3,8 @@ config {
     name: 'asse_tbl',
     schema: 'newdataset',
     assertions: {
-        uniqueKey: ['id'],
-        nonNull: ['name'],
-        rowConditions:[
-          'marks<80'
-        ]
+        nonNull: ['name']
     }
 }
 
-WITH
-  cte AS (
-  SELECT
-    id,
-    name,
-    marks,
-    date,
-    ROW_NUMBER() OVER(PARTITION BY id) AS rn
-  FROM
-    `secure-potion-409606.harika_dataset.details_tbl`
-)
-SELECT
-*
-FROM
-  cte
-WHERE
-  rn=1 and name is not null and marks<80
+select * from `secure-potion-409606.harika_dataset.details_tbl`

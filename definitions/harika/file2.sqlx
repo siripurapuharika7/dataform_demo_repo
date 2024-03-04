@@ -1,7 +1,8 @@
 config {
     type: "table",
-    schema: "newdataset",
-    name: "gptbl"
+    schema: "harika_dataset",
+    name: "asset2tbl",
+    tags:['asset2']
 }
 
-select * from `secure-potion-409606.harika_dataset.marks1`
+select * from `secure-potion-409606.harika_dataset.marks_2`

@@ -1,0 +1,11 @@
+config {
+    type:'operations'
+}
+
+declare newvalue string;
+
+set newvalue= 'insert into `secure-potion-409606.harika_dataset.output` ';
+
+execute immediate concat (newvalue , 'select * from secure-potion-409606.harika_dataset.marks_2')
+
+
